@@ -1,2 +1,0 @@
-# DAPUR-UMMA
-Tugas Akhir PWBS-GABEXT
