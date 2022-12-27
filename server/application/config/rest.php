@@ -126,8 +126,8 @@ $config['rest_auth'] = false;
 | Note: If 'rest_auth' is set to 'session' then change 'auth_source' to the name of the session variable
 |
 */
-// $config['auth_source'] = 'ldap';
-$config['auth_source'] = '';
+$config['auth_source'] = 'ldap';
+
 /*
 |--------------------------------------------------------------------------
 | Allow Authentication and API Keys
@@ -298,7 +298,7 @@ $config['rest_database_group'] = 'default';
 | The table name in your database that stores API keys
 |
 */
-$config['rest_keys_table'] = 'key';
+$config['rest_keys_table'] = 'keys';
 
 /*
 |--------------------------------------------------------------------------
@@ -376,7 +376,7 @@ $config['rest_key_length'] = 40;
 | 2012/06/12. See RFC 6648 specification for more details
 |
 */
-$config['rest_key_name'] = '';
+$config['rest_key_name'] = 'X-API-KEY';
 
 /*
 |--------------------------------------------------------------------------
