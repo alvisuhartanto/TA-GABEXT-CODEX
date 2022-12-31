@@ -1,0 +1,315 @@
+:root{
+    --putih : #ffffff;
+    --merah : #00a0f1;
+    --abu : #333333;
+    --biru : #00a0f1;
+    --garis : 2px solid var(--biru);
+    --jarak : 10px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,td{
+    border: var(--garis);
+
+}
+th{
+    background:var(--merah); 
+    color: var(--putih);
+    padding: calc(var(--jarak)*2);
+    
+}
+
+td{
+    background:var(--putih); 
+    color: var(--abu);
+    padding: var(--jarak);
+}
+
+.area-tombol{
+    display: flex;
+    justify-content: end;
+    margin-bottom: calc(var(--jarak)*2);
+    /*align-items: center;
+    height: 100px;
+    background: var(--merah);*/
+}
+
+.btn-primary, .btn-secondary{
+    border: var(--garis);
+    height: 40px;
+    width: 120px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: var(--jarak);
+}
+
+.btn-primary{
+    background: var(--abu);
+    padding: var(--jarak);
+    outline: 0;
+    color: var(--putih); 
+    margin-right: var(--jarak);
+}
+
+.btn-secondary{
+    background: var(--putih);
+    padding: var(--jarak);   
+    outline: 0;
+    margin-left: var(--jarak);
+}
+
+.area-aksi{
+    display: flex;
+    width: 100%;
+
+}
+
+.btn-ubah,.btn-hapus{
+    width: 48%;
+    border: var(--garis);
+    padding: var(--jarak) calc(var(--jarak)*2);
+    color: var(--putih);
+    border-radius: var(--jarak);
+    cursor: pointer;
+}
+
+.btn-ubah{
+    background: var(--abu);
+    margin-right: 2%;
+
+}
+
+.btn-hapus{
+    background: var(--merah);
+    margin-right: 2%;
+
+}
+
+.item-label1,.item-input1,.item-error1,
+.item-label2,.item-input2,.item-error2,
+.item-label3,.item-input3,.item-error3,
+.item-label4,.item-input4,.item-error4,
+.item-label5,.item-input5,.item-error5,
+.item-label6,.item-input6,.item-error6,
+.item-label7,.item-input7,.item-error7
+{
+    display: grid;
+    align-items: center;
+    padding: var(--jarak);
+}
+
+.item-label1
+{
+    grid-area: label1;
+}
+
+.item-input1
+{
+    grid-area: input1;
+}
+
+.item-error1
+{
+    grid-area: error1;
+}
+
+.item-label2
+{
+    grid-area: label2;
+}
+
+.item-input2
+{
+    grid-area: input2;
+}
+
+.item-error2
+{
+    grid-area: error2;
+}
+
+.item-label3
+{
+    grid-area: label3;
+}
+
+.item-input3
+{
+    grid-area: input3;
+}
+
+.item-error3
+{
+    grid-area: error3;
+}
+
+.item-label4
+{
+    grid-area: label4;
+}
+
+.item-input4
+{
+    grid-area: input4;
+}
+
+.item-error4
+{
+    grid-area: error4;
+}
+
+.item-label5
+{
+    grid-area: label5;
+}
+
+.item-input5
+{
+    grid-area: input5;
+}
+
+.item-error5
+{
+    grid-area: error5;
+}
+
+.item-label6
+{
+    grid-area: label6;
+}
+
+.item-input6
+{
+    grid-area: input6;
+}
+
+.item-error6
+{
+    grid-area: error6;
+}
+
+.item-label7
+{
+    grid-area: label7;
+}
+
+.item-input7
+{
+    grid-area: input7;
+}
+
+.item-error7
+{
+    grid-area: error7;
+}
+.area-grid
+{
+    display: grid;
+    width: 100%;
+    grid-template-areas: 
+    'label1 input1 input1 error1'
+    'label2 input2 input2 error2'
+    'label3 input3 input3 error3'
+    'label4 input4 input4 error4'
+    'label5 input5 input5 error5'
+    'label6 input6 input6 error6'
+    'label7 input7 input7 error7';
+    grid-gap: 10px;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-auto-columns: 1fr;
+}
+
+.txt-input,.select-input
+{
+    border: var(--garis);
+    border-radius: calc(var(--jarak)*2);
+    outline: 0;
+    padding: var(--jarak);
+    /* height: calc(var(--jarak)*2); */
+    font-size: 14px;
+}
+
+.select-input
+{
+    background: none;
+}
+
+.txt-input:focus,.select-input:focus
+{
+    border: 1px solid var(--merah);
+    box-shadow: 0px 0px var(--jarak) var(--merah);
+}
+
+/* label::before
+{
+    content: "-----";
+}
+
+label::after
+{
+    content: "#####";
+} */
+
+.info-error
+{
+    color: var(--merah);
+    font-size: 12px;
+    display: none;
+}
+
+.benner{
+    width: auto;
+    height: auto;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+nav ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px;
+    align-content: center;
+} 
+nav ul li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding-right: 10px;
+}
+body{
+    background-color: rgb(173, 247, 255);
+    background-position: center;
+    background-size: 100%;
+    background-attachment: fixed;
+    /* background-image: url(benner/Kampus_Teknokrat_A-removebg-preview.png); */
+    /* background-image: url('benner/Kampus_Teknokrat_A-removebg-preview.png'); */
+}
+.navigasi1{
+    height: 80px;
+    width: 100%;
+    background-color: #025da8;
+    margin-bottom: 10px;
+}
+.logo{
+    font-size: 20px;
+    line-height: 80px;
+    font-weight: bold;
+    color: rgb(255, 235, 164);
+    padding: 0 50px;
+}
+.benner{
+    height: 500px;
+    width: 100%;
+    background-color: #025da8;
+    background-image: url(benner/tekno.png);
+}
