@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `tb_dosen` (
   `kode_dosen` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`nip`) USING BTREE,
   UNIQUE KEY `kode_dosen` (`kode_dosen`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_nilai_mahasiswa.tb_dosen: ~3 rows (approximately)
 DELETE FROM `tb_dosen`;
@@ -40,24 +40,22 @@ CREATE TABLE IF NOT EXISTS `tb_mahasiswa` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `npm` varchar(9) NOT NULL,
   `nama` varchar(50) NOT NULL,
-  `jenis_kelamin` varchar(1) NOT NULL,
+  `jenis_kelamin` enum('L','P') NOT NULL,
   `tanggal_lahir` date NOT NULL,
-  `id_pk` varchar(3) NOT NULL,
-  `Semester` int(11) NOT NULL,
-  `alamat` text NOT NULL,
+  `id_pk` enum('TI','TK','SI','IF','SIA') NOT NULL,
+  `Semester` enum('1','2','3','4','5','6','7','8','9','10') NOT NULL,
+  `alamat` tinytext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_nilai_mahasiswa.tb_mahasiswa: ~6 rows (approximately)
+-- Dumping data for table db_nilai_mahasiswa.tb_mahasiswa: ~0 rows (approximately)
 DELETE FROM `tb_mahasiswa`;
 /*!40000 ALTER TABLE `tb_mahasiswa` DISABLE KEYS */;
 INSERT INTO `tb_mahasiswa` (`id`, `npm`, `nama`, `jenis_kelamin`, `tanggal_lahir`, `id_pk`, `Semester`, `alamat`) VALUES
-	(1, '20313007', 'Yeris Ari Sandi', 'L', '2002-10-19', 'TI', 5, 'Tanjung senang'),
-	(2, '20313008', 'Surya Aji', 'L', '1994-09-18', 'TI', 5, 'Pahoman'),
-	(3, '20313009', 'Fahreza Aditya Pratama', 'L', '1995-01-12', 'TI', 5, 'Way Halim'),
-	(5, '20313012', 'M.Tegar Tirta Laksana', 'L', '1994-11-03', 'TI', 5, 'Natar'),
-	(6, '20313015', 'Alvi Suhartanto', 'L', '2001-12-14', 'TI', 5, 'Antasari'),
-	(7, '20313010', 'Gusti Firmansyah', 'L', '2001-12-12', 'TI', 5, 'Campang ');
+	(1, '20313015', 'Alvi Suhartanto', 'L', '2001-12-14', 'TI', '5', 'Antasari'),
+	(2, '20313007', 'Yeria Ari Sandi', 'L', '2002-01-06', 'TI', '5', 'Way Halim'),
+	(3, '20313009', 'Fahreja Aditya', 'L', '2000-06-06', 'TI', '5', 'Kedaton'),
+	(4, '20313012', 'Tirta Tegar Laksana', 'L', '2002-10-10', 'TI', '5', 'Natar');
 /*!40000 ALTER TABLE `tb_mahasiswa` ENABLE KEYS */;
 
 -- Dumping structure for table db_nilai_mahasiswa.tb_mata_kuliah
