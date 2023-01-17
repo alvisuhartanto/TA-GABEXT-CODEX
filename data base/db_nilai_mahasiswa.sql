@@ -17,6 +17,23 @@
 CREATE DATABASE IF NOT EXISTS `db_nilai_mahasiswa` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_general_ci */;
 USE `db_nilai_mahasiswa`;
 
+-- Dumping structure for table db_nilai_mahasiswa.tb_detail_dosen
+CREATE TABLE IF NOT EXISTS `tb_detail_dosen` (
+  `NIP` varchar(25) NOT NULL,
+  `kode_mk` varchar(6) NOT NULL,
+  `jam_mengajar` int(11) NOT NULL,
+  UNIQUE KEY `kode_mk` (`kode_mk`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table db_nilai_mahasiswa.tb_detail_dosen: ~3 rows (approximately)
+DELETE FROM `tb_detail_dosen`;
+/*!40000 ALTER TABLE `tb_detail_dosen` DISABLE KEYS */;
+INSERT INTO `tb_detail_dosen` (`NIP`, `kode_mk`, `jam_mengajar`) VALUES
+	('0203018101', 'DIP002', 14),
+	('022100105', 'DIP004', 30),
+	('0229117102', 'INF001', 20);
+/*!40000 ALTER TABLE `tb_detail_dosen` ENABLE KEYS */;
+
 -- Dumping structure for table db_nilai_mahasiswa.tb_dosen
 CREATE TABLE IF NOT EXISTS `tb_dosen` (
   `nip` varchar(25) NOT NULL,
@@ -24,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `tb_dosen` (
   `kode_dosen` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`nip`) USING BTREE,
   UNIQUE KEY `kode_dosen` (`kode_dosen`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table db_nilai_mahasiswa.tb_dosen: ~3 rows (approximately)
 DELETE FROM `tb_dosen`;
@@ -46,9 +63,9 @@ CREATE TABLE IF NOT EXISTS `tb_mahasiswa` (
   `Semester` enum('1','2','3','4','5','6','7','8','9','10') NOT NULL,
   `alamat` tinytext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_nilai_mahasiswa.tb_mahasiswa: ~0 rows (approximately)
+-- Dumping data for table db_nilai_mahasiswa.tb_mahasiswa: ~4 rows (approximately)
 DELETE FROM `tb_mahasiswa`;
 /*!40000 ALTER TABLE `tb_mahasiswa` DISABLE KEYS */;
 INSERT INTO `tb_mahasiswa` (`id`, `npm`, `nama`, `jenis_kelamin`, `tanggal_lahir`, `id_pk`, `Semester`, `alamat`) VALUES
@@ -77,6 +94,43 @@ INSERT INTO `tb_mata_kuliah` (`kode_mk`, `nama_mk`, `sks`) VALUES
 	('INF001', 'Sistem Operasi', 4),
 	('INF002', 'Aljabar Linier', 2);
 /*!40000 ALTER TABLE `tb_mata_kuliah` ENABLE KEYS */;
+
+-- Dumping structure for table db_nilai_mahasiswa.tb_nilai
+CREATE TABLE IF NOT EXISTS `tb_nilai` (
+  `nim` varchar(9) NOT NULL,
+  `kode_mk` varchar(6) NOT NULL,
+  `nilai` varchar(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table db_nilai_mahasiswa.tb_nilai: ~6 rows (approximately)
+DELETE FROM `tb_nilai`;
+/*!40000 ALTER TABLE `tb_nilai` DISABLE KEYS */;
+INSERT INTO `tb_nilai` (`nim`, `kode_mk`, `nilai`) VALUES
+	('J3C112048', 'DIP002', 'A'),
+	('J3C112144', 'DIP002', 'AB'),
+	('J3C112167', 'DIP002', 'B'),
+	('J3C112048', 'DIP004', 'BC'),
+	('J3C112144', 'DIP004', 'AB'),
+	('J3C112167', 'DIP004', 'C');
+/*!40000 ALTER TABLE `tb_nilai` ENABLE KEYS */;
+
+-- Dumping structure for table db_nilai_mahasiswa.tb_program_keahlian
+CREATE TABLE IF NOT EXISTS `tb_program_keahlian` (
+  `id_pk` varchar(3) NOT NULL,
+  `nama_pk` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_pk`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- Dumping data for table db_nilai_mahasiswa.tb_program_keahlian: 5 rows
+DELETE FROM `tb_program_keahlian`;
+/*!40000 ALTER TABLE `tb_program_keahlian` DISABLE KEYS */;
+INSERT INTO `tb_program_keahlian` (`id_pk`, `nama_pk`) VALUES
+	('SIA', 'Sistem Informasi Akuntansi'),
+	('SI', 'Sistem Informasi'),
+	('IF', 'Informatika'),
+	('TK', 'Teknik Komputer'),
+	('TI', 'Teknologi Informasi');
+/*!40000 ALTER TABLE `tb_program_keahlian` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
