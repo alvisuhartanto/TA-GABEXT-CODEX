@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 require APPPATH."libraries/Server.php";
 
-class Perogram_Keahlian extends Server {
+class Program_Keahlian extends Server {
 
 	//buat fungsi "GET"
     function service_get()
@@ -13,7 +13,7 @@ class Perogram_Keahlian extends Server {
         // panggil fungsi "get_data"
         $hasil = $this->mdl->get_data();
 
-        $this->response(array("Perogram_Keahlian" => $hasil),200);
+        $this->response(array("Program_Keahlian" => $hasil),200);
     }
     //buat fungsi "POST"
     function service_post()
@@ -38,12 +38,12 @@ class Perogram_Keahlian extends Server {
         // jika hasil = 0
         if($hasil == 0)
         {
-            $this->response(array("status" => "Data Perogram_Keahlian Berhasil Disimpan"),200);
+            $this->response(array("status" => "Data Program_Keahlian Berhasil Disimpan"),200);
         }
         // jika hasil != 0
         else
         {
-            $this->response(array("status" => "Data Perogram_Keahlian Gagal Disimpan !"),200);
+            $this->response(array("status" => "Data Program_Keahlian Gagal Disimpan !"),200);
         }
 
     }
@@ -79,12 +79,12 @@ class Perogram_Keahlian extends Server {
         // jika proses delete berhasil
         if($hasil == 1)
         {
-            $this->response(array("status" => "Data Perogram_Keahlian Berhasil Dihapus"),200);
+            $this->response(array("status" => "Data Program_Keahlian Berhasil Dihapus"),200);
         }
         // jika proses delete gagal
         else
         {
-            $this->response(array("status" => "Data Perogram_Keahlian Gagal Dihapus !"),200);
+            $this->response(array("status" => "Data Program_Keahlian Gagal Dihapus !"),200);
         }   
     }
 }
