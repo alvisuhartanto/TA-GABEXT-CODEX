@@ -20,6 +20,8 @@
         </label>
     </section>
     <section class="item-input1">
+
+
         <input type="text" id="txt_npm" class="txt-input" maxLength="9">
     </section>
     <section class="item-error1">
@@ -44,7 +46,19 @@
         </label>
     </section>
     <section class="item-input3">
-        <input type="text" id="txt_semester" class="txt-input" maxLength="10">
+    <select id="cbo_semester" class="select-input">       
+            <option value="-">PILIH Semester</option>
+            <option value="1">Semester 1</option>
+            <option value="2">Semester 2</option>
+            <option value="3">Semester 3</option>
+            <option value="4">Semester 4</option>
+            <option value="5">Semester 5</option>
+            <option value="6">Semester 6</option>
+            <option value="7">Semester 7</option>
+            <option value="8">Semester 8</option>
+            <option value="9">Semester 9</option>
+            <option value="10">Semester 10</option>
+        </select>
     </section>
     <section class="item-error3">
         <p class="info-error" id="err_semester"></p>
@@ -80,11 +94,16 @@
     </section>
 
     <section class="item-label6">
-        <label id="lbl_jenis_kelamin" for="txt_jenis_kelamin">
-            jenis_kelamin:
+    <label id="lbl_jenis_kelamin" for="cbo_jenis_kelamin">
+            Jenis Kelamin:
         </label></section>
+    </section>
     <section class="item-input6">
-        <input type="text" id="txt_jenis_kelamin" class="txt-input" maxLength="15">
+        <select id="cbo_jenis_kelamin" class="select-input">       
+            <option value="-">PILIH Jenis Kelamin</option>
+            <option value="L">Laki Laki</option>
+            <option value="P">Perempuan</option>
+        </select>
     </section>
     <section class="item-error6">
         <p class="info-error" id="err_jenis_kelamin"></p>
@@ -109,8 +128,8 @@
         let btn_lihat = document.getElementById("btn_lihat");
         let btn_simpan = document.getElementById("btn_simpan");
         btn_lihat.addEventListener('click', function(){
-         location.href="<?php echo base_url();?>"
-         })
+        location.href="<?php echo base_url();?>"
+        })
 
          function setRefresh(){
             location.href='<?php echo site_url("Mahasiswa/addMahasiswa/"); ?>';
@@ -127,7 +146,7 @@
             let err_nama = document.getElementById("err_nama");
 
             let lbl_semester = document.getElementById("lbl_semester");
-            let txt_semester = document.getElementById("txt_semester");
+            let cbo_semester = document.getElementById("cbo_semester");
             let err_semester = document.getElementById("err_semester");
 
             let lbl_jurusan = document.getElementById("lbl_jurusan");
@@ -139,7 +158,7 @@
             let err_tanggal_lahir = document.getElementById("err_tanggal_lahir");
 
             let lbl_jenis_kelamin = document.getElementById("lbl_jenis_kelamin");
-            let txt_jenis_kelamin = document.getElementById("txt_jenis_kelamin");
+            let txt_jenis_kelamin = document.getElementById("cbo_jenis_kelamin");
             let err_jenis_kelamin = document.getElementById("err_jenis_kelamin");
 
             let lbl_alamat = document.getElementById("lbl_alamat");
@@ -177,17 +196,17 @@
                 err_nama.innerHTML =""
             ]
             
-            const semester = (txt_semester.value === "") ?
+            const semester = (cbo_semester.value === "") ?
             [
                 lbl_semester.style.color = "#FF0000",
-                txt_semester.style.borderColor = "#FF0000",
+                cbo_semester.style.borderColor = "#FF0000",
                 err_semester.style.display = "unset",
                 err_semester.innerHTML ="<em>semester Harus Disi!!!</em>"
             ]
             :
             [
                 lbl_semester.style.color = "unset",
-                txt_semester.style.borderColor = "unset",
+                cbo_semester.style.borderColor = "unset",
                 err_semester.style.display = "none",
                 err_semester.innerHTML =""
             ]
@@ -222,17 +241,17 @@
                 err_tanggal_lahir.innerHTML =""
             ]
 
-            const jenis_kelamin = (txt_jenis_kelamin.value === "") ?
+            const jenis_kelamin = (cbo_jenis_kelamin.value === "") ?
             [
                 lbl_jenis_kelamin.style.color = "#FF0000",
-                txt_jenis_kelamin.style.borderColor = "#FF0000",
+                cbo_jenis_kelamin.style.borderColor = "#FF0000",
                 err_jenis_kelamin.style.display = "unset",
                 err_jenis_kelamin.innerHTML ="<em>jenis_kelamin Harus Disi!!!</em>"
             ]
             :
             [
                 lbl_jenis_kelamin.style.color = "unset",
-                txt_jenis_kelamin.style.borderColor = "unset",
+                cbo_jenis_kelamin.style.borderColor = "unset",
                 err_jenis_kelamin.style.display = "none",
                 err_jenis_kelamin.innerHTML =""
             ]
@@ -254,7 +273,7 @@
 
             if(err_npm.innerHTML === "" && nama[3] === "" && semester[3] ==="" && jurusan[3] ===""&& tanggal_lahir[3] ===""&& jenis_kelamin[3] ===""&& alamat[3] ==="")
             {
-                setSave(txt_npm.value,txt_nama.value,txt_semester.value,cbo_jurusan.value,txt_tanggal_lahir.value,,txt_jenis_kelamin.value,,txt_alamat.value)
+                setSave(txt_npm.value,txt_nama.value,2002-01-06semester.value,cbo_jurusan.value,txt_tanggal_lahir.value,cbo_jenis_kelamin.value,txt_alamat.value)
             }  
         })
 
