@@ -87,3 +87,4 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 //custom define (konstanta)
 define("API", "http://localhost/TA-GABEXT-CODEX/server/index.php");
 define("APIMAHASISWA",API."/Mahasiswa");
+define("APIDOSEN",API."/Dosen");
