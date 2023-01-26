@@ -17,7 +17,7 @@
         <label class="logo"> Biodata Mahasiswa</label>
         <ul>
             <li><a href="">Biodata Siswa</a></li>
-            <li><a href="">Biodata Dosen</a></li>
+            <li><a href="Dosen">Biodata Dosen</a></li>
             <li><a href="">Matakuliah</a></li>
             <li><a href="">Nilai</a></li>
             <li><a href="">KRS</a></li> 
@@ -30,17 +30,17 @@
         <th style = "width: 5%;">No.</th>
         <th style = "width: 10%;">NPM</th>
         <th style = "width: 30%;">Nama</th>
-        <th style = "width: 5%;">Semester</th>
-        <th style = "width: 5%;">Jurusan</th>
-        <th style = "width: 15%;">Tanggal Lahir</th>
         <th style = "width: 5%;">Jenis kelamin</th>
+        <th style = "width: 15%;">Tanggal Lahir</th>
+        <th style = "width: 5%;">Jurusan</th>
+        <th style = "width: 5%;">Semester</th>
         <th style = "width: 15%;">Alamat</th>
         <th style = "width: 10%;">Aksi</th>
        </tr>
         </thead> 
        <!-- buat isi table -->
        <!-- mulai looping -->
-       <tbody>
+       <tbody>=
        <?php
         $no = 1;
         foreach($tampil->mahasiswa as $record)
@@ -58,16 +58,16 @@
         <?php echo $record->nama_mhs;?>
         </td>
         <td style = "text-align: center;">
-        <?php echo $record->Semester_mhs;?>
-        </td>
-        <td style = "text-align: center;">
-        <?php echo $record->id_pk_mhs;?>
+        <?php echo $record->jenis_kelamin_mhs;?>
         </td>
         <td style = "text-align: center;">
         <?php echo $record->tanggal_lahir_mhs;?>
         </td>
         <td style = "text-align: center;">
-        <?php echo $record->jenis_kelamin_mhs;?>
+        <?php echo $record->id_pk_mhs;?>
+        </td>
+        <td style = "text-align: center;">
+        <?php echo $record->Semester_mhs;?>
         </td>
         <td style = "text-align: center;">
         <?php echo $record->alamat_mhs;?>
