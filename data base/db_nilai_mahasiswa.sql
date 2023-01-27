@@ -17,6 +17,20 @@
 CREATE DATABASE IF NOT EXISTS `db_nilai_mahasiswa` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_general_ci */;
 USE `db_nilai_mahasiswa`;
 
+-- Dumping structure for table db_nilai_mahasiswa.tb_admin
+CREATE TABLE IF NOT EXISTS `tb_admin` (
+  `kode_admin` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  PRIMARY KEY (`kode_admin`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table db_nilai_mahasiswa.tb_admin: ~1 rows (approximately)
+DELETE FROM `tb_admin`;
+/*!40000 ALTER TABLE `tb_admin` DISABLE KEYS */;
+INSERT INTO `tb_admin` (`kode_admin`, `nama`) VALUES
+	(1, 'Alvi');
+/*!40000 ALTER TABLE `tb_admin` ENABLE KEYS */;
+
 -- Dumping structure for table db_nilai_mahasiswa.tb_detail_dosen
 CREATE TABLE IF NOT EXISTS `tb_detail_dosen` (
   `NIP` varchar(25) NOT NULL,
