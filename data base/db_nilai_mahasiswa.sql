@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `tb_admin` (
   PRIMARY KEY (`kode_admin`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_nilai_mahasiswa.tb_admin: ~1 rows (approximately)
+-- Dumping data for table db_nilai_mahasiswa.tb_admin: ~0 rows (approximately)
 DELETE FROM `tb_admin`;
 /*!40000 ALTER TABLE `tb_admin` DISABLE KEYS */;
 INSERT INTO `tb_admin` (`kode_admin`, `nama`) VALUES
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `tb_dosen` (
   UNIQUE KEY `kode_dosen` (`kode_dosen`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_nilai_mahasiswa.tb_dosen: ~3 rows (approximately)
+-- Dumping data for table db_nilai_mahasiswa.tb_dosen: ~4 rows (approximately)
 DELETE FROM `tb_dosen`;
 /*!40000 ALTER TABLE `tb_dosen` DISABLE KEYS */;
 INSERT INTO `tb_dosen` (`nip`, `nama`, `kode_dosen`) VALUES
@@ -127,6 +127,25 @@ INSERT INTO `tb_nilai` (`nim`, `kode_mk`, `nilai`) VALUES
 	('J3C112144', 'DIP004', 'AB'),
 	('J3C112167', 'DIP004', 'C');
 /*!40000 ALTER TABLE `tb_nilai` ENABLE KEYS */;
+
+-- Dumping structure for table db_nilai_mahasiswa.tb_pengguna
+CREATE TABLE IF NOT EXISTS `tb_pengguna` (
+  `username` varchar(25) NOT NULL,
+  `password` text NOT NULL,
+  `status` int(11) NOT NULL,
+  `npm` varchar(9) NOT NULL,
+  `nip` varchar(25) NOT NULL,
+  `kode_admin` int(11) NOT NULL,
+  PRIMARY KEY (`username`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table db_nilai_mahasiswa.tb_pengguna: ~0 rows (approximately)
+DELETE FROM `tb_pengguna`;
+/*!40000 ALTER TABLE `tb_pengguna` DISABLE KEYS */;
+INSERT INTO `tb_pengguna` (`username`, `password`, `status`, `npm`, `nip`, `kode_admin`) VALUES
+	('alvisuhartanto', 'alvi1234', 1, '20313015', '24567831', 1),
+	('fahreja', 'reja123', 1, '20313009', '24131782', 1);
+/*!40000 ALTER TABLE `tb_pengguna` ENABLE KEYS */;
 
 -- Dumping structure for table db_nilai_mahasiswa.tb_program_keahlian
 CREATE TABLE IF NOT EXISTS `tb_program_keahlian` (
