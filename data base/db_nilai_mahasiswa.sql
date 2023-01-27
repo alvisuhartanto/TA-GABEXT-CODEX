@@ -128,6 +128,20 @@ INSERT INTO `tb_nilai` (`nim`, `kode_mk`, `nilai`) VALUES
 	('J3C112167', 'DIP004', 'C');
 /*!40000 ALTER TABLE `tb_nilai` ENABLE KEYS */;
 
+-- Dumping structure for table db_nilai_mahasiswa.tb_paket_krs
+CREATE TABLE IF NOT EXISTS `tb_paket_krs` (
+  `kode_mk` varchar(6) NOT NULL,
+  `npm` varchar(9) NOT NULL,
+  `IPK` float NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table db_nilai_mahasiswa.tb_paket_krs: ~0 rows (approximately)
+DELETE FROM `tb_paket_krs`;
+/*!40000 ALTER TABLE `tb_paket_krs` DISABLE KEYS */;
+INSERT INTO `tb_paket_krs` (`kode_mk`, `npm`, `IPK`) VALUES
+	('DIP002', '20313015', 3.7);
+/*!40000 ALTER TABLE `tb_paket_krs` ENABLE KEYS */;
+
 -- Dumping structure for table db_nilai_mahasiswa.tb_pengguna
 CREATE TABLE IF NOT EXISTS `tb_pengguna` (
   `username` varchar(25) NOT NULL,
@@ -139,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `tb_pengguna` (
   PRIMARY KEY (`username`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_nilai_mahasiswa.tb_pengguna: ~0 rows (approximately)
+-- Dumping data for table db_nilai_mahasiswa.tb_pengguna: ~2 rows (approximately)
 DELETE FROM `tb_pengguna`;
 /*!40000 ALTER TABLE `tb_pengguna` DISABLE KEYS */;
 INSERT INTO `tb_pengguna` (`username`, `password`, `status`, `npm`, `nip`, `kode_admin`) VALUES
