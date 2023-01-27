@@ -23,19 +23,19 @@ class Paket_krs extends Server {
         // ambil parameter data yang akan diisi
         $data = array(
             "kode_mk" => $this->post("kode_mk"),
-            "nim" => $this->post("nim"),
+            "npm" => $this->post("npm"),
             "ipk" => $this->post("ipk"),
             "token" => base64_encode($this->post("kode_mk")),
         );
 
         // $data["kode_mk"] = $this->post("kode_mk");
-        // $data["nim"] = $this->post("nim");
+        // $data["npm"] = $this->post("npm");
 
         // $kode_mk = $this->post("kode_mk");
-        // $nim = $this->post("nim");
+        // $npm = $this->post("npm");
 
         // panggil method "save_data"
-        $hasil = $this->mdl->save_data($data["kode_mk"],$data["nim"],$data["ipk"],$data["token"]);
+        $hasil = $this->mdl->save_data($data["kode_mk"],$data["npm"],$data["ipk"],$data["token"]);
         // jika hasil = 0
         if($hasil == 0)
         {
@@ -54,11 +54,11 @@ class Paket_krs extends Server {
         $this->load->model("Mpaket_krs","mdl",TRUE);
         $data = array(
             "kode_mk" => $this->put("kode_mk"),
-            "nim" => $this->put("nim"),
+            "npm" => $this->put("npm"),
             "ipk" => $this->put("ipk"),
             "token" => base64_encode($this->put("kode_mk")),
         );
-        $hasil = $this->mdl->put_data($data["kode_mk"],$data["nim"],$data["ipk"],$data["token"]);
+        $hasil = $this->mdl->put_data($data["kode_mk"],$data["npm"],$data["ipk"],$data["token"]);
 
         if($hasil == 0)
         {
