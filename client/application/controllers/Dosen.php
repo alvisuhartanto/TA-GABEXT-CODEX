@@ -19,12 +19,12 @@ class Dosen extends CI_Controller {
 		echo json_encode(array("statusnya" => $delete -> status));
 	}
 
-	function add()
+	function addDosen()
 	{
 		$this->load->view('en_dosen');
 	}
 
-	function setSave()
+	function setSaveDosen()
 	{
 		// baca nilai dari fetch
 		$data = array (
@@ -53,6 +53,6 @@ class Dosen extends CI_Controller {
 			$data["token"] = $token;
 		}
 
-		$this->load->view('up_dosen',$data);
+		$this->load->view('en_dosen',$data);
 	}
 }
